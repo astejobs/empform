@@ -17,7 +17,7 @@ public class ReferralEmployee {
 	String department;
 	
 	String relationship;
-
+	
 	public long getId() {
 		return id;
 	}

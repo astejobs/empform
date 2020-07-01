@@ -1,5 +1,6 @@
 package com.stie.empform.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +22,7 @@ public class AppUser {
 	
 	String password;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	Role role;
 
 	public long getId() {

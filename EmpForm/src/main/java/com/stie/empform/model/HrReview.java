@@ -24,7 +24,10 @@ public class HrReview {
 	
 	String salaryOffer;
 	
+	String salaryTerm;
 
+	LocalDate date;
+	
 	public long getId() {
 		return id;
 	}
@@ -73,5 +76,22 @@ public class HrReview {
 		this.salaryOffer = salaryOffer;
 	}
 
+	public String getSalaryTerm() {
+		return salaryTerm;
+	}
+
+	public void setSalaryTerm(String salaryTerm) {
+		this.salaryTerm = salaryTerm;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	
 	
 }

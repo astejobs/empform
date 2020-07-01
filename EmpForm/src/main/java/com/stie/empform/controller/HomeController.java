@@ -1,7 +1,6 @@
 package com.stie.empform.controller;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -10,13 +9,17 @@ import java.util.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.stie.empform.dao.CandidateInfoDao;
 import com.stie.empform.model.CandidateInfo;
+import com.stie.empform.model.HrReview;
 import com.stie.empform.model.Image;
+import com.stie.empform.model.InterviewAssesment;
 
 @RestController
 @CrossOrigin
@@ -81,4 +84,36 @@ public class HomeController {
 		
 		return ResponseEntity.ok(null);
 	}
+	
+	@GetMapping("/candidates/assessment")
+	public ResponseEntity<?> getCandidatesForAssessment(){
+		return ResponseEntity.ok(candidateInfoDao.findAllForAssessment());
+	}
+	
+	@GetMapping("/candidates/review")
+	public ResponseEntity<?> getCandidatesForReview(){
+		return ResponseEntity.ok(candidateInfoDao.findAllForReview());
+	}
+	
+	@GetMapping("/candidate/{id}")
+	public ResponseEntity<?> getCandidate(@PathVariable("id") long id){
+		return ResponseEntity.ok(candidateInfoDao.findByIdProjected(id));
+	}
+	
+	@PostMapping("/assessment/{id}")
+	public ResponseEntity<?> updateAssessmentOfCandidate(@PathVariable("id") long id,@RequestBody InterviewAssesment assesment){
+		CandidateInfo candidateInfo= candidateInfoDao.findById(id).orElse(null); 
+		candidateInfo.setInterviewAssesment(assesment);
+		candidateInfoDao.save(candidateInfo);
+		return ResponseEntity.ok(null);
+	}
+	
+	@PostMapping("/review/{id}")
+	public ResponseEntity<?> updateHrReviewOfCandidate(@PathVariable("id") long id,@RequestBody HrReview review){
+		CandidateInfo candidateInfo= candidateInfoDao.findById(id).orElse(null); 
+		candidateInfo.setHrReview(review);
+		candidateInfoDao.save(candidateInfo);
+		return ResponseEntity.ok(null);
+	}
+		
 }

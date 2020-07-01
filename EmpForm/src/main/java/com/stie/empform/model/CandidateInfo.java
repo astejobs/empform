@@ -29,7 +29,7 @@ public class CandidateInfo {
 	boolean referral; 
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-	ReferralEmployee referralEmployeee;
+	ReferralEmployee referralEmployee;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	PersonalDetails personalDetails;
@@ -148,12 +148,12 @@ public class CandidateInfo {
 		this.referral = referral;
 	}
 
-	public ReferralEmployee getReferralEmployeee() {
-		return referralEmployeee;
+	public ReferralEmployee getReferralEmployee() {
+		return referralEmployee;
 	}
 
-	public void setReferralEmployeee(ReferralEmployee referralEmployeee) {
-		this.referralEmployeee = referralEmployeee;
+	public void setReferralEmployee(ReferralEmployee referralEmployee) {
+		this.referralEmployee = referralEmployee;
 	}
 
 	public PersonalDetails getPersonalDetails() {

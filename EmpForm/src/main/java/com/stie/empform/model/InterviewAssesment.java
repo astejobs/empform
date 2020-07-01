@@ -60,6 +60,12 @@ public class InterviewAssesment {
 	
 	String recommended;
 	
+	String interviewer1;
+	
+	String interviewer2;
+	
+	String approvedBy;
+	
 	public long getId() {
 		return id;
 	}
@@ -252,6 +258,28 @@ public class InterviewAssesment {
 		this.recommended = recommended;
 	}
 
-	
+	public String getInterviewer1() {
+		return interviewer1;
+	}
+
+	public void setInterviewer1(String interviewer1) {
+		this.interviewer1 = interviewer1;
+	}
+
+	public String getInterviewer2() {
+		return interviewer2;
+	}
+
+	public void setInterviewer2(String interviewer2) {
+		this.interviewer2 = interviewer2;
+	}
+
+	public String getApprovedBy() {
+		return approvedBy;
+	}
+
+	public void setApprovedBy(String approvedBy) {
+		this.approvedBy = approvedBy;
+	}
 	
 }

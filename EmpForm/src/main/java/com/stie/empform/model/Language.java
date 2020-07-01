@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Language {
 
@@ -21,6 +23,7 @@ public class Language {
 	
 	String writing;
 	
+	@JsonIgnore
 	@ManyToOne
 	CandidateInfo candidateInfo;
 

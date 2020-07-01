@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Reference {
 
@@ -21,8 +23,9 @@ public class Reference {
 	
 	String yearsKnown;
 	
-	String conatct;
+	String contact;
 	
+	@JsonIgnore
 	@ManyToOne
 	CandidateInfo candidateInfo;
 
@@ -66,12 +69,14 @@ public class Reference {
 		this.yearsKnown = yearsKnown;
 	}
 
-	public String getConatct() {
-		return conatct;
+	
+
+	public String getContact() {
+		return contact;
 	}
 
-	public void setConatct(String conatct) {
-		this.conatct = conatct;
+	public void setContact(String contact) {
+		this.contact = contact;
 	}
 
 	public CandidateInfo getCandidateInfo() {

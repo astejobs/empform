@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Membership {
 
@@ -26,6 +28,7 @@ public class Membership {
 	
 	String position;
 	
+	@JsonIgnore
 	@ManyToOne
 	CandidateInfo candidateInfo;
 
