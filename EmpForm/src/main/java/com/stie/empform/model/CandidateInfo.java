@@ -73,16 +73,28 @@ public class CandidateInfo {
 	
 	boolean declaration1;
 	
+	String declaration1Reason;
+	
 	boolean declaration2;
 
+	String declaration2Reason;
+	
 	boolean declaration3;
-
+	
+	String declaration3Reason;
+	
 	boolean declaration4;
+	
+	String declaration4Reason;
 
 	boolean declaration5;
 
+	String declaration5Reason;
+
 	boolean declaration6;
-	
+
+	String declaration6Reason;
+
 	boolean declaration7;
 	
 	boolean declaration8;
@@ -386,6 +398,54 @@ public class CandidateInfo {
 
 	public void setHrReview(HrReview hrReview) {
 		this.hrReview = hrReview;
+	}
+
+	public String getDeclaration1Reason() {
+		return declaration1Reason;
+	}
+
+	public void setDeclaration1Reason(String declaration1Reason) {
+		this.declaration1Reason = declaration1Reason;
+	}
+
+	public String getDeclaration2Reason() {
+		return declaration2Reason;
+	}
+
+	public void setDeclaration2Reason(String declaration2Reason) {
+		this.declaration2Reason = declaration2Reason;
+	}
+
+	public String getDeclaration3Reason() {
+		return declaration3Reason;
+	}
+
+	public void setDeclaration3Reason(String declaration3Reason) {
+		this.declaration3Reason = declaration3Reason;
+	}
+
+	public String getDeclaration4Reason() {
+		return declaration4Reason;
+	}
+
+	public void setDeclaration4Reason(String declaration4Reason) {
+		this.declaration4Reason = declaration4Reason;
+	}
+
+	public String getDeclaration5Reason() {
+		return declaration5Reason;
+	}
+
+	public void setDeclaration5Reason(String declaration5Reason) {
+		this.declaration5Reason = declaration5Reason;
+	}
+
+	public String getDeclaration6Reason() {
+		return declaration6Reason;
+	}
+
+	public void setDeclaration6Reason(String declaration6Reason) {
+		this.declaration6Reason = declaration6Reason;
 	}
 	
 	
